@@ -1,0 +1,7 @@
+{
+  "name": "gallery-marina-root",
+  "private": true,
+  "scripts": {
+    "build": "npm install --prefix react-app && npm run --prefix react-app build && cp -r react-app/dist dist"
+  }
+}
