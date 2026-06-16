@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>صالون لويس السادس عشر - جاليري مارينا للاثاث الفرنسي</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-bright": "#ffffff",
+                "on-primary-container": "#908D8D",
+                "tertiary-fixed-dim": "#908D8D",
+                "outline-variant": "#FAE6E4",
+                "tertiary-fixed": "#FAE6E4",
+                "on-secondary-container": "#5A5959",
+                "on-error": "#ffffff",
+                "on-primary": "#ffffff",
+                "primary-container": "#050404",
+                "primary-fixed-dim": "#908D8D",
+                "on-tertiary-fixed": "#050404",
+                "on-tertiary-fixed-variant": "#5A5959",
+                "on-secondary-fixed": "#050404",
+                "surface-container-high": "#FAE6E4",
+                "surface-container": "#FAE6E4",
+                "secondary": "#5A5959",
+                "tertiary-container": "#050404",
+                "surface-variant": "#FAE6E4",
+                "on-secondary-fixed-variant": "#5A5959",
+                "surface-dim": "#908D8D",
+                "surface-tint": "#908D8D",
+                "primary-fixed": "#FAE6E4",
+                "error-container": "#FAE6E4",
+                "secondary-fixed": "#FAE6E4",
+                "secondary-fixed-dim": "#908D8D",
+                "on-primary-fixed": "#050404",
+                "inverse-primary": "#908D8D",
+                "on-surface": "#050404",
+                "tertiary": "#050404",
+                "on-error-container": "#050404",
+                "inverse-on-surface": "#FFFFFF",
+                "on-background": "#050404",
+                "surface": "#FFFFFF",
+                "secondary-container": "#FAE6E4",
+                "surface-container-highest": "#908D8D",
+                "surface-container-low": "#ffffff",
+                "on-primary-fixed-variant": "#5A5959",
+                "outline": "#908D8D",
+                "on-tertiary": "#ffffff",
+                "background": "#FFFFFF",
+                "inverse-surface": "#050404",
+                "surface-container-lowest": "#ffffff",
+                "on-surface-variant": "#5A5959",
+                "on-secondary": "#ffffff",
+                "primary": "#050404",
+                "on-tertiary-container": "#908D8D",
+                "error": "#C0504D"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "gutter": "24px",
+                "margin-desktop": "80px",
+                "section-gap": "120px",
+                "container-max": "1440px",
+                "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                "body-lg": ["Cairo", "sans-serif"],
+                "body-md": ["Cairo", "sans-serif"],
+                "headline-lg": ["Cairo", "sans-serif"],
+                "headline-lg-mobile": ["Cairo", "sans-serif"],
+                "display-lg": ["Cairo", "sans-serif"],
+                "headline-md": ["Cairo", "sans-serif"],
+                "label-md": ["Cairo", "sans-serif"]
+            },
+            "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "display-lg": ["64px", {"lineHeight": "1.1", "fontWeight": "700"}],
+                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'Cairo';
+            src: url('Assets/font/Cairo-VariableFont_slnt,wght.ttf') format('truetype');
+            font-weight: 200 1000;
+            font-style: normal;
+        }
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .smooth-transition {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen font-body-md text-body-md">
+
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-surface text-primary dark:text-primary-fixed-dim fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-[0_10px_40px_rgba(5,4,4,0.04)] shadow-sm smooth-transition">
+<div class="flex justify-between items-center px-gutter py-2 max-w-container-max mx-auto h-[100px]">
+    <!-- Mobile Menu Button (Left) -->
+    <button class="md:hidden text-on-surface hover:opacity-70 transition-opacity p-2">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+    <!-- Logo (Center Mobile, Left Desktop) -->
+    <div class="flex-shrink-0 flex items-center justify-center md:justify-start w-full md:w-auto absolute md:static left-0 h-full">
+        <a href="home.html" class="pointer-events-auto block">
+            <img alt="جاليري مارينا للاثاث الفرنسي Logo" class="h-16 w-auto object-contain rounded" src="Assets/logo.jpeg"/>
+        </a>
+    </div>
+    <!-- Navigation Links (Center Desktop) -->
+    <nav class="hidden md:flex flex-1 justify-center space-x-8 space-x-reverse">
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="category.html">المجموعات</a>
+        <a class="text-primary border-b border-primary pb-1 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="category.html">الصالونات</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="category.html">غرف النوم</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="category.html">السفرة</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="#">عن مارينا</a>
+    </nav>
+    <!-- Trailing Icons (Right - Removed Cart & Wishlist) -->
+    <div class="flex items-center space-x-4 space-x-reverse w-[40px] justify-end">
+        <button class="text-on-surface hover:opacity-70 transition-opacity scale-95 duration-200 ease-in-out p-2">
+            <span class="material-symbols-outlined">search</span>
+        </button>
+    </div>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="flex-grow pt-[140px] pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+    <!-- Breadcrumb Navigation -->
+    <nav class="flex items-center gap-2 text-secondary font-label-md text-label-md mb-8">
+        <a class="hover:text-primary transition-colors" href="home.html">الرئيسية</a>
+        <span class="material-symbols-outlined text-[16px] text-outline">chevron_left</span>
+        <a class="hover:text-primary transition-colors" href="category.html">الصالونات</a>
+        <span class="material-symbols-outlined text-[16px] text-outline">chevron_left</span>
+        <span class="text-on-surface">صالون لويس السادس عشر</span>
+    </nav>
+
+    <!-- Product Layout Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Right Column: Product Images (6 cols on lg) -->
+        <div class="lg:col-span-7 space-y-6">
+            <!-- Main Large Image Container -->
+            <div class="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-surface-container shadow-[0_10px_40px_rgba(5,4,4,0.04)]">
+                <img id="main-product-image" alt="صالون لويس السادس عشر" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGj2YAL5GU2XxvY-4hkEzMR-uwFXScspjmG1IUfw_sV6mlDPSup-Jhwzyzb5yEWDCx2xGEyBg9C79qxWy2yivXdh6GlqO5jKDZ_WvXhavJpV6HU2g2nuZnPoQ3qQniRdlj6rKfix--cVQ4s1T7gxHKjCWBPe58X-YSLIDCEcbLn5aHo2mmM8DFhPvaM1oCMRICie23zApFUyiGjlXwSuXXuci3w4eG1Y3ufWztbhbqEUr9AfYa8OshEORJreOHjX5UZgD3QjbKO2kO"/>
+            </div>
+            
+            <!-- Auxiliary / Thumbnail Images Grid -->
+            <div class="grid grid-cols-4 gap-4">
+                <button onclick="changeMainImage(this, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAGj2YAL5GU2XxvY-4hkEzMR-uwFXScspjmG1IUfw_sV6mlDPSup-Jhwzyzb5yEWDCx2xGEyBg9C79qxWy2yivXdh6GlqO5jKDZ_WvXhavJpV6HU2g2nuZnPoQ3qQniRdlj6rKfix--cVQ4s1T7gxHKjCWBPe58X-YSLIDCEcbLn5aHo2mmM8DFhPvaM1oCMRICie23zApFUyiGjlXwSuXXuci3w4eG1Y3ufWztbhbqEUr9AfYa8OshEORJreOHjX5UZgD3QjbKO2kO')" class="relative aspect-[4/3] rounded-lg overflow-hidden border-2 border-primary transition-all bg-surface-container opacity-100 hover:opacity-90 thumbnail-btn">
+                    <img alt="صالون لويس السادس عشر - زاوية رئيسية" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGj2YAL5GU2XxvY-4hkEzMR-uwFXScspjmG1IUfw_sV6mlDPSup-Jhwzyzb5yEWDCx2xGEyBg9C79qxWy2yivXdh6GlqO5jKDZ_WvXhavJpV6HU2g2nuZnPoQ3qQniRdlj6rKfix--cVQ4s1T7gxHKjCWBPe58X-YSLIDCEcbLn5aHo2mmM8DFhPvaM1oCMRICie23zApFUyiGjlXwSuXXuci3w4eG1Y3ufWztbhbqEUr9AfYa8OshEORJreOHjX5UZgD3QjbKO2kO"/>
+                </button>
+                <button onclick="changeMainImage(this, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzIZRL02KqwNX4iMWtmQAA6e8yEq69022IizBP8NPREytOCIRbEbrUd8sVKaq_1a8dIgtF0MExaZtcpfim3ErVC4vThgVf3r5OTL_P6ZqgO_RZuJqZDLv4hnPbyl-HSBaP0cSAGsILfAvKF8nKxcapBijDvG3eaDWzhTaquRD82bivWgTHEKN2KZhmt1zOTvldzMSEhkpOcSF0MorXnWqC9SvJQz-fqRGd5YD8kbXM3ZTCmtclX-B29wiHq9Gt86BL38kyg9nDuukh')" class="relative aspect-[4/3] rounded-lg overflow-hidden border border-outline-variant transition-all bg-surface-container opacity-70 hover:opacity-100 thumbnail-btn">
+                    <img alt="تفاصيل الصالون - الفوتيه" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIZRL02KqwNX4iMWtmQAA6e8yEq69022IizBP8NPREytOCIRbEbrUd8sVKaq_1a8dIgtF0MExaZtcpfim3ErVC4vThgVf3r5OTL_P6ZqgO_RZuJqZDLv4hnPbyl-HSBaP0cSAGsILfAvKF8nKxcapBijDvG3eaDWzhTaquRD82bivWgTHEKN2KZhmt1zOTvldzMSEhkpOcSF0MorXnWqC9SvJQz-fqRGd5YD8kbXM3ZTCmtclX-B29wiHq9Gt86BL38kyg9nDuukh"/>
+                </button>
+                <button onclick="changeMainImage(this, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDAqVZFIJARbVAr1DWxoqPQ_rW1mWF-q4vnXF--SgPgSTHF6gK3DAKRr76TFLektrgqgsjdBzvMJVcOmdrBi00FYajnLJdCqMyqeKAjPwDTuYMJHDsp2QTw6QZbdAzIInNGvY3jAH8MeUlY4jm7yFsKtf_nnjVb_pHYwkZql8tZPfRktEzMIvAwZOnx-tA4UqgrX66-x7x5T7_o0ilz9vwRL4DfUQ8WXYFm_OawUGHou_Uw-EcTdnOXAadOQxM7fZ5svF2Aaz-kBums')" class="relative aspect-[4/3] rounded-lg overflow-hidden border border-outline-variant transition-all bg-surface-container opacity-70 hover:opacity-100 thumbnail-btn">
+                    <img alt="كرسي ماريا أنطوانيت" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAqVZFIJARbVAr1DWxoqPQ_rW1mWF-q4vnXF--SgPgSTHF6gK3DAKRr76TFLektrgqgsjdBzvMJVcOmdrBi00FYajnLJdCqMyqeKAjPwDTuYMJHDsp2QTw6QZbdAzIInNGvY3jAH8MeUlY4jm7yFsKtf_nnjVb_pHYwkZql8tZPfRktEzMIvAwZOnx-tA4UqgrX66-x7x5T7_o0ilz9vwRL4DfUQ8WXYFm_OawUGHou_Uw-EcTdnOXAadOQxM7fZ5svF2Aaz-kBums"/>
+                </button>
+                <button onclick="changeMainImage(this, 'https://lh3.googleusercontent.com/aida-public/AB6AXuALDF0mZcfv5DmZXpRvie2q4HSWEvMPz5jtnm2anbR4d4ICmI-odqn9-3rX12Ato23Rc2qNYQOaWz_TwSyQYb1lOEiS5770OExVLp-NsWCPt2WnS5Yw9twdrOfDOyI_sGAqA7MOT8TVIY6qzavQ0y3kU49NirYSVIZvmzdPYG1CkmAEtmshBJvXTOwtXk_jtICiWD3qWlKfOfHKGzQ2E6zms79aykxzKNOCWxGNgdGkOn0eHP1AQxFSlYvq9DBRmsrMIZxNy5w_auGD')" class="relative aspect-[4/3] rounded-lg overflow-hidden border border-outline-variant transition-all bg-surface-container opacity-70 hover:opacity-100 thumbnail-btn">
+                    <img alt="أريكة شاتو" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALDF0mZcfv5DmZXpRvie2q4HSWEvMPz5jtnm2anbR4d4ICmI-odqn9-3rX12Ato23Rc2qNYQOaWz_TwSyQYb1lOEiS5770OExVLp-NsWCPt2WnS5Yw9twdrOfDOyI_sGAqA7MOT8TVIY6qzavQ0y3kU49NirYSVIZvmzdPYG1CkmAEtmshBJvXTOwtXk_jtICiWD3qWlKfOfHKGzQ2E6zms79aykxzKNOCWxGNgdGkOn0eHP1AQxFSlYvq9DBRmsrMIZxNy5w_auGD"/>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Left Column: Product Details (5 cols on lg) -->
+        <div class="lg:col-span-5 flex flex-col gap-6">
+            <div>
+                <span class="text-secondary font-label-md text-label-md tracking-widest uppercase block mb-2">الصالونات الفرنسية الكلاسيكية</span>
+                <h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-md text-on-surface mb-3 font-semibold">صالون لويس السادس عشر الفاخر</h1>
+                <div class="flex items-center gap-3">
+                    <span class="text-2xl font-bold text-on-surface">١٢٠,٠٠٠ ج.م</span>
+                    <span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs font-semibold rounded-full border border-outline-variant">متوفر بالمخزن</span>
+                </div>
+            </div>
+            
+            <hr class="border-outline-variant/30" />
+            
+            <!-- Description -->
+            <div class="space-y-3">
+                <h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider">الوصف</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    يجسد صالون لويس السادس عشر الفخامة والأصالة في أبهى صورها. تم تصميمه وتنفيذه على أيدي أمهر الحرفيين ليحاكي القطع الأثرية في القصور الفرنسية العريقة. يتميز بالحفر اليدوي الدقيق على خشب الزان الروماني المتين، مع لمسات التذهيب الفاخرة والقماش الحريري الفخم بلونه الكريمي الهادئ الذي يعكس الضوء بشكل رائع في صالتك، ليضفي عليها شعوراً بالاتساع والرفاهية المطلقة.
+                </p>
+            </div>
+            
+            <hr class="border-outline-variant/30" />
+            
+            <!-- Specifications -->
+            <div class="space-y-4">
+                <h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider">المواصفات الفنية</h3>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 font-body-md text-body-md text-on-surface">
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        <span>نوع الخشب: زان أحمر روماني عالي الجودة</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        <span>القماش: حرير طبيعي فاخر مطرز</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        <span>الدهان: ورق ذهب فرنسي معتق (مات)</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        <span>المكونات: كنبة كبيرة + ٤ فوتيه + طاولة وسط</span>
+                    </li>
+                    <li class="flex items-center gap-2 col-span-1 md:col-span-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        <span>الضمان: ٥ سنوات ضد عيوب الصناعة</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <hr class="border-outline-variant/30" />
+            
+            <!-- WhatsApp Order Button -->
+            <div class="pt-4">
+                <a href="https://api.whatsapp.com/send?phone=201000000000&text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B5%D8%A7%D9%84%D9%88%D9%86%20%D9%84%D9%88%D9%8A%D8%B3%20%D8%A7%D9%84%D8%B3%D8%A7%D8%AF%D8%B3%20%D8%B9%D8%B4%D8%B1%20%D8%A7%D9%84%D9%81%D8%A7%D8%AE%D8%B1%20%D8%A7%D9%84%D9%85%D8%B9%D8%B1%D9%88%D8%B5%20%D9%81%D9%8A%20%D8%AC%D8%A7%D9%84%D9%8a%D8%B1%D9%8A%20%D9%85%D8%A7%D8%B1%D9%8A%D9%86%D8%A7" target="_blank" class="inline-flex w-full items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-white font-label-md text-lg px-8 py-5 rounded-lg transition-all duration-300 shadow-[0_4px_20px_rgba(37,211,102,0.3)] hover:-translate-y-0.5 select-none text-center">
+                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.498 1.45 5.416 1.451 5.378 0 9.753-4.375 9.756-9.757.002-2.607-1.01-5.059-2.852-6.902C17.078 2.099 14.621 1.085 12 1.085c-5.385 0-9.763 4.377-9.767 9.76-.001 1.958.513 3.868 1.492 5.578L2.735 20.8l4.417-1.161c-.139-.074-.325-.131-.495-.213l-.01-.002zM15.421 12.92c-.29-.145-1.716-.848-1.982-.945-.266-.097-.459-.145-.653.145-.193.29-.748.945-.918 1.139-.17.194-.34.218-.63.073-.29-.145-1.226-.452-2.336-1.442-.864-.77-1.447-1.721-1.616-2.012-.17-.29-.018-.447.127-.591.13-.13.29-.339.435-.509.145-.17.193-.29.29-.485.097-.194.048-.364-.024-.509-.073-.145-.653-1.574-.895-2.156-.236-.569-.475-.491-.653-.5-.17-.008-.364-.01-.557-.01-.193 0-.509.072-.775.364-.266.29-1.017.993-1.017 2.42 0 1.428 1.04 2.809 1.186 3.003.145.194 2.046 3.125 4.957 4.38.693.3 1.233.479 1.655.613.696.22 1.33.19 1.83.115.558-.083 1.716-.702 1.958-1.38.242-.68.242-1.26.17-1.38-.072-.122-.266-.194-.557-.34z"/>
+                    </svg>
+                    <span>طلب واستفسار عبر واتساب</span>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Related Products Section -->
+    <section class="mt-24 border-t border-outline-variant/30 pt-16">
+        <h2 class="font-headline-md text-headline-md text-on-surface mb-12">قطع مميزة قد تعجبك</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Related Card 1 -->
+            <a href="product.html" class="group block">
+                <div class="relative w-full aspect-[3/4] bg-surface-container mb-6 overflow-hidden rounded-lg shadow-[0_10px_40px_rgba(5,4,4,0.04)] group-hover:-translate-y-1 transition-transform duration-300">
+                    <img alt="كرسي ماريا أنطوانيت" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAqVZFIJARbVAr1DWxoqPQ_rW1mWF-q4vnXF--SgPgSTHF6gK3DAKRr76TFLektrgqgsjdBzvMJVcOmdrBi00FYajnLJdCqMyqeKAjPwDTuYMJHDsp2QTw6QZbdAzIInNGvY3jAH8MeUlY4jm7yFsKtf_nnjVb_pHYwkZql8tZPfRktEzMIvAwZOnx-tA4UqgrX66-x7x5T7_o0ilz9vwRL4DfUQ8WXYFm_OawUGHou_Uw-EcTdnOXAadOQxM7fZ5svF2Aaz-kBums"/>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">كرسي ماريا أنطوانيت</h3>
+                <p class="font-body-md text-body-md text-secondary">٢٥,٠٠٠ ج.م</p>
+            </a>
+            <!-- Related Card 2 -->
+            <a href="product.html" class="group block">
+                <div class="relative w-full aspect-[3/4] bg-surface-container mb-6 overflow-hidden rounded-lg shadow-[0_10px_40px_rgba(5,4,4,0.04)] group-hover:-translate-y-1 transition-transform duration-300">
+                    <img alt="أريكة شاتو" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALDF0mZcfv5DmZXpRvie2q4HSWEvMPz5jtnm2anbR4d4ICmI-odqn9-3rX12Ato23Rc2qNYQOaWz_TwSyQYb1lOEiS5770OExVLp-NsWCPt2WnS5Yw9twdrOfDOyI_sGAqA7MOT8TVIY6qzavQ0y3kU49NirYSVIZvmzdPYG1CkmAEtmshBJvXTOwtXk_jtICiWD3qWlKfOfHKGzQ2E6zms79aykxzKNOCWxGNgdGkOn0eHP1AQxFSlYvq9DBRmsrMIZxNy5w_auGD"/>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">أريكة شاتو</h3>
+                <p class="font-body-md text-body-md text-secondary">٤٥,٠٠٠ ج.م</p>
+            </a>
+            <!-- Related Card 3 -->
+            <a href="product.html" class="group block">
+                <div class="relative w-full aspect-[3/4] bg-surface-container mb-6 overflow-hidden rounded-lg shadow-[0_10px_40px_rgba(5,4,4,0.04)] group-hover:-translate-y-1 transition-transform duration-300">
+                    <img alt="طاولة قهوة فرساي" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHH6z9lAGiETwmwqjN7-mdF0dKLEk1Aow_59pvE3OIqUHzCfX14HIfbfbMiCJc9xwDcBdKM_GKsndFKRTz_7QT-FGPWp4Fpsik_E6S85LfyvE8Cbo8MpQDjCmuKsxhZdItByfZVB4huzYU-WyIyQ_aU2tmbnN4Yl_0mP_pOf30neGbE7EmV82beC9xS0aYL3K0bcmSuliES3ZmM4pO0zIQ33M2TX_XS_H4EQP7I7_NaCLr-MhNHYC-599830VdV1riZMVLvZSuNfbj"/>
+                </div>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">طاولة قهوة فرساي</h3>
+                <p class="font-body-md text-body-md text-secondary">١٨,٥٠٠ ج.م</p>
+            </a>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface text-secondary dark:text-secondary-fixed w-full border-t border-outline-variant/30 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-20 gap-8 w-full max-w-container-max mx-auto font-body-md text-body-md">
+    <div class="mb-8 md:mb-0 text-center md:text-right">
+        <p class="font-headline-lg text-headline-lg text-on-surface dark:text-surface mb-2">جاليري مارينا</p>
+        <p>© ٢٠٢٦ جاليري مارينا للاثاث الفرنسي. جميع الحقوق محفوظة.</p>
+        <p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed mt-2">
+            تم التصميم بواسطة <a href="https://nova-4solutions.vercel.app" target="_blank" class="hover:text-error underline transition-colors">Nova Solutions</a>
+        </p>
+    </div>
+    <nav class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8 font-label-md text-label-md">
+        <a class="text-secondary hover:text-error transition-colors" href="#">سياسة الخصوصية</a>
+        <a class="text-secondary hover:text-error transition-colors" href="#">الشروط والأحكام</a>
+        <a class="text-secondary hover:text-error transition-colors" href="#">اتصل بنا</a>
+        <a class="text-secondary hover:text-error transition-colors" href="#">الفروع</a>
+    </nav>
+</div>
+</footer>
+
+<script>
+    function changeMainImage(thumbnailBtn, imageUrl) {
+        // Change the main image source
+        const mainImg = document.getElementById('main-product-image');
+        mainImg.src = imageUrl;
+        
+        // Reset borders for all thumbnails
+        const buttons = document.querySelectorAll('.thumbnail-btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('border-primary', 'opacity-100');
+            btn.classList.add('border-outline-variant', 'opacity-70');
+        });
+        
+        // Highlight active thumbnail
+        thumbnailBtn.classList.remove('border-outline-variant', 'opacity-70');
+        thumbnailBtn.classList.add('border-primary', 'opacity-100');
+    }
+</script>
+</body>
+</html>

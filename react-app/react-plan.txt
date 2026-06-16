@@ -1,0 +1,24 @@
+refer to /Assets to find all assets and db schema
+-the navigation bar should have the following:
+-الرئيسية:
+(simple hero-auto sliding best selling products-sliding categories)
+-category 1"الافضل مبيعا"
+-category 2
+-category 3
+and so on ,categories are loaded from the database table of categories
+-عن جاليري مارينا:
+(contact info-map-social media links)
+-footer : social links + made by Nova Solutions(https://nova-4solutions.vercel.app)
+
+-product page should show product details-code-images-category
+
+-Admin Dashboard:
+-login
+-all crud operations on categories and products
+-convert images to webp format for optimization and upload to supa base cloud storage.
+-login should be secure ,use hashing for password.
+
+-use react best practices for optimization and performance.
+admin creds:
+Admin
+Nova@2026@# 

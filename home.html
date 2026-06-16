@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>جاليري مارينا للاثاث الفرنسي</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&amp;display=swap" rel="stylesheet"/>
+<style>
+    @font-face {
+        font-family: 'Cairo';
+        src: url('Assets/font/Cairo-VariableFont_slnt,wght.ttf') format('truetype');
+        font-weight: 200 1000;
+        font-style: normal;
+    }
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+</style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-bright": "#ffffff",
+                "on-primary-container": "#908D8D",
+                "tertiary-fixed-dim": "#908D8D",
+                "outline-variant": "#FAE6E4",
+                "tertiary-fixed": "#FAE6E4",
+                "on-secondary-container": "#5A5959",
+                "on-error": "#ffffff",
+                "on-primary": "#ffffff",
+                "primary-container": "#050404",
+                "primary-fixed-dim": "#908D8D",
+                "on-tertiary-fixed": "#050404",
+                "on-tertiary-fixed-variant": "#5A5959",
+                "on-secondary-fixed": "#050404",
+                "surface-container-high": "#FAE6E4",
+                "surface-container": "#FAE6E4",
+                "secondary": "#5A5959",
+                "tertiary-container": "#050404",
+                "surface-variant": "#FAE6E4",
+                "on-secondary-fixed-variant": "#5A5959",
+                "surface-dim": "#908D8D",
+                "surface-tint": "#908D8D",
+                "primary-fixed": "#FAE6E4",
+                "error-container": "#FAE6E4",
+                "secondary-fixed": "#FAE6E4",
+                "secondary-fixed-dim": "#908D8D",
+                "on-primary-fixed": "#050404",
+                "inverse-primary": "#908D8D",
+                "on-surface": "#050404",
+                "tertiary": "#050404",
+                "on-error-container": "#050404",
+                "inverse-on-surface": "#FFFFFF",
+                "on-background": "#050404",
+                "surface": "#FFFFFF",
+                "secondary-container": "#FAE6E4",
+                "surface-container-highest": "#908D8D",
+                "surface-container-low": "#ffffff",
+                "on-primary-fixed-variant": "#5A5959",
+                "outline": "#908D8D",
+                "on-tertiary": "#ffffff",
+                "background": "#FFFFFF",
+                "inverse-surface": "#050404",
+                "surface-container-lowest": "#ffffff",
+                "on-surface-variant": "#5A5959",
+                "on-secondary": "#ffffff",
+                "primary": "#050404",
+                "on-tertiary-container": "#908D8D",
+                "error": "#C0504D"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "margin-desktop": "80px",
+                "section-gap": "120px",
+                "container-max": "1440px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Cairo", "sans-serif"
+                ],
+                "body-md": [
+                        "Cairo", "sans-serif"
+                ],
+                "headline-lg": [
+                        "Cairo", "sans-serif"
+                ],
+                "headline-lg-mobile": [
+                        "Cairo", "sans-serif"
+                ],
+                "display-lg": [
+                        "Cairo", "sans-serif"
+                ],
+                "headline-md": [
+                        "Cairo", "sans-serif"
+                ],
+                "label-md": [
+                        "Cairo", "sans-serif"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+      },
+    },
+  }
+</script>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-error selection:text-on-error">
+<!-- TopNavBar from JSON -->
+<header class="bg-surface dark:bg-on-surface fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-[0_10px_40px_rgba(5,4,4,0.04)]">
+<div class="flex justify-between items-center px-gutter py-4 max-w-container-max mx-auto shadow-sm">
+<!-- Brand -->
+<a class="flex items-center gap-4 hover:opacity-90 transition-opacity" href="home.html">
+<img alt="جاليري مارينا للاثاث الفرنسي Logo" class="h-16 w-auto object-contain rounded" src="Assets/logo.jpeg"/>
+<span class="font-headline-lg text-headline-lg text-on-surface dark:text-surface hidden md:block">جاليري مارينا للاثاث الفرنسي</span>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-error transition-colors duration-300 hover:opacity-70 transition-opacity" href="category.html">المجموعات</a>
+<a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-error transition-colors duration-300 hover:opacity-70 transition-opacity" href="category.html">الصالونات</a>
+<a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-error transition-colors duration-300 hover:opacity-70 transition-opacity" href="category.html">غرف النوم</a>
+<a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-error transition-colors duration-300 hover:opacity-70 transition-opacity" href="category.html">السفرة</a>
+<a class="font-label-md text-label-md tracking-widest uppercase text-on-surface-variant hover:text-error transition-colors duration-300 hover:opacity-70 transition-opacity" href="#">عن مارينا</a>
+</nav>
+<!-- Trailing Icons (Removed Cart & Wishlist) -->
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed-dim w-[40px] justify-end">
+</div>
+</div>
+</header>
+
+<main class="pt-[100px]">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 flex flex-col gap-8 z-10">
+<h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface">
+                    فخامة الأثاث الفرنسي في مساحتك
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    نقدم لك مجموعة حصرية من أرقى قطع الأثاث التي تجمع بين التراث الفرنسي العريق واللمسات العصرية الراقية، لتضفي جواً من الفخامة والهدوء على منزلك.
+                </p>
+<div class="flex gap-4 mt-4">
+<a class="bg-error text-on-error font-label-md text-label-md px-8 py-4 rounded DEFAULT hover:bg-error/90 transition-colors inline-block text-center" href="category.html">
+                        تصفح المجموعات
+                    </a>
+</div>
+</div>
+<div class="md:col-span-7 relative h-[50vh] md:h-[70vh] w-full mt-10 md:mt-0">
+<div class="absolute inset-0 bg-surface-variant/20 rounded-xl transform translate-x-4 translate-y-4"></div>
+<img alt="صالة عرض فاخرة" class="w-full h-full object-cover rounded-xl shadow-[0_10px_40px_rgba(5,4,4,0.04)] relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk6HKl8pJgtW13Vx-XKP_FpF5qr0hXTuK8ueLhPKNzQX_vibPc-l8O9v6F_zZ-msFvajcoTT2kaV6vYEmwAi3kElLMnV0K4mrIqmLs2IxCUAiqIEcbxKuqZ8W60eeIKLzms-w_4AR_bxMhCNrIrzWDjBg8_9kq5FJFrsWU4i9jPo7nSwAsZgISVPo22zTYgzu1AkJ5FUdEezpTvn2u7dWJJ72PP5wXzyWjovbaF6KbKBhf8CILOp1MdKDPHQwRbDr2Rodi7qpCX29L"/>
+</div>
+</section>
+
+<!-- Best Products (Swapped to be first) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20 md:py-section-gap">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">أفضل المنتجات</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">قطع فريدة تم اختيارها بعناية لترتقي بمساحتك</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<a class="group cursor-pointer block" href="product.html">
+<div class="relative w-full aspect-[3/4] bg-surface-container mb-6 overflow-hidden rounded-lg shadow-[0_10px_40px_rgba(5,4,4,0.04)] group-hover:-translate-y-1 transition-transform duration-300">
+<div class="absolute top-4 left-4 z-10 bg-error text-on-error font-label-md text-label-md px-3 py-1 rounded-full uppercase">
+                            خشب بلوط
+                        </div>
+<img alt="كرسي طعام فرنسي" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaL1jgFF90YkV5OS01b1ziWqpUG_obypmZurdK45Wplpb9cjJ7LvtxxhLYDPCp3dIPvfCSrp-oJRagT1sygrFSb1EJL45ADjA1mSZvbBDqBF5x5v5AIXMjSpKJqoQfcavFq6ZjDZQuIM1Xxx-U_xS87mCUiDi_ISHVyKc47bx2_TyvPDAtHLTliDFHJiSXqaSIq4HJePm8C7PSOYOw0eU-vN-WIWP2BTQN0Fi6_2WBUTSs1Pcy4lcLvj-ehE5ZpQIvtA9ZPZOW2g7X"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">كرسي طعام "لويس"</h3>
+<p class="font-body-md text-body-md text-secondary">١,٢٠٠ ج.م</p>
+</a>
+<!-- Product Card 2 -->
+<a class="group cursor-pointer block" href="product.html">
+<div class="relative w-full aspect-[3/4] bg-surface-container mb-6 overflow-hidden rounded-lg shadow-[0_10px_40px_rgba(5,4,4,0.04)] group-hover:-translate-y-1 transition-transform duration-300">
+<div class="absolute top-4 left-4 z-10 bg-error text-on-error font-label-md text-label-md px-3 py-1 rounded-full uppercase">
+                            مخمل
+                        </div>
+<img alt="صوفا باريسية" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCup4g8XJoPOLfpFsyI67F-TjYiLNQ1l-xhHxUd8ofNtaSzwpiBCy6CapXUQV2GGnVf9QQ5cQTixvdQcT0Fz5dmX4hP9NOkv_B2eCsXjNoQEB_Jgv_ILyTaqXxTlDM13OznT4eEi_yMgvjlkDTZaTc7sju6kpeROIJmpjW4C8ZphyMru8ZXbEuqQJBqhli-xt4iP4G66_VZgwwHr-XFXS8lKH0zdTLd02LPAIRo0gDlKOLyBsMnPgX4uI8_NPnHcDQBjrKirg77OIaI"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">صوفا باريسية فاخرة</h3>
+<p class="font-body-md text-body-md text-secondary">٨,٥٠٠ ج.م</p>
+</a>
+<!-- Product Card 3 -->
+<a class="group cursor-pointer block" href="product.html">
+<div class="relative w-full aspect-[3/4] bg-surface-container mb-6 overflow-hidden rounded-lg shadow-[0_10px_40px_rgba(5,4,4,0.04)] group-hover:-translate-y-1 transition-transform duration-300">
+<div class="absolute top-4 left-4 z-10 bg-error text-on-error font-label-md text-label-md px-3 py-1 rounded-full uppercase">
+                            رخام طبيعي
+                        </div>
+<img alt="طاولة كونسول" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYAAbDLyui9INLotLhqdJlfMEa7F__XYCYo74h-_yW0I0eHu7u5reICsY5b8MKRP5wwdxVR5ejI-APWIzU-6rCWO_3tLXb9HW8pLg_S3LH5zRcxtcJXul9laJDm4v66TNsShzRCDUO7mec0j2OMqIbxMXT_i7X8-owT-pO_yEWj2Sg12gII6dln9myEbUMECNv58sGjL-n9XZjj2imzPfR9dcLAG_Gn10Dmn8BijMeuJHjVn7E_OO4ozZcAf32wfl-Q0Kt7xUTW2FW"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">كونسول "ماري" الرخامي</h3>
+<p class="font-body-md text-body-md text-secondary">٤,٣٠٠ ج.م</p>
+</a>
+</div>
+<div class="flex justify-center mt-12">
+<a class="border border-outline font-label-md text-label-md px-8 py-3 rounded DEFAULT hover:bg-surface-variant transition-colors inline-block text-on-surface" href="category.html">
+                    عرض جميع المنتجات
+                </a>
+</div>
+</section>
+
+<!-- Main Categories (Swapped to be second) -->
+<section class="bg-surface-container-low py-20 md:py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">الفئات الرئيسية</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Category 1 -->
+<a class="group relative h-[400px] overflow-hidden rounded-lg block" href="category.html">
+<img alt="غرف النوم" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnZeItf0p4FSSnB2dnOgL1_BZoswDUgQSlnNEnhbry6GdAjWZbapOstyzdBjILU0VQ24EoxEBV60poamr7WPOayawIGvtcPrvaKxRv5JAqi3VYenTPwfi9dI3s5uUG_jQJdglYFyMa86vOHXXZ8V-sLKOjbAzEgL3Cmw28oSzqktK-ZUp77MDu0FzpENNK9i_7XFfg7LEFvkAqK_0n69JrnXlOsm9GajOUO10V8d54k0HbNM_Ld0Pv_BGWiihicvMQE7ep87QyzoAy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<h3 class="font-headline-md text-headline-md text-white">غرف النوم</h3>
+</div>
+</a>
+<!-- Category 2 -->
+<a class="group relative h-[400px] overflow-hidden rounded-lg block" href="category.html">
+<img alt="الصالونات" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIZRL02KqwNX4iMWtmQAA6e8yEq69022IizBP8NPREytOCIRbEbrUd8sVKaq_1a8dIgtF0MExaZtcpfim3ErVC4vThgVf3r5OTL_P6ZqgO_RZuJqZDLv4hnPbyl-HSBaP0cSAGsILfAvKF8nKxcapBijDvG3eaDWzhTaquRD82bivWgTHEKN2KZhmt1zOTvldzMSEhkpOcSF0MorXnWqC9SvJQz-fqRGd5YD8kbXM3ZTCmtclX-B29wiHq9Gt86BL38kyg9nDuukh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+<h3 class="font-headline-md text-headline-md text-white">الصالونات</h3>
+</div>
+</a>
+</div>
+</div>
+</section>
+</main>
+
+<!-- Footer from JSON -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface w-full border-t border-outline-variant/30">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-20 gap-8 w-full max-w-container-max mx-auto">
+<div class="mb-6 md:mb-0 text-center md:text-right">
+<span class="font-headline-lg text-headline-lg text-on-surface dark:text-surface block mb-4">جاليري مارينا</span>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed">© ٢٠٢٦ جاليري مارينا للاثاث الفرنسي. جميع الحقوق محفوظة.</p>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed mt-2">
+    تم التصميم بواسطة <a href="https://nova-4solutions.vercel.app" target="_blank" class="hover:text-error underline transition-colors">Nova Solutions</a>
+</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-error transition-colors" href="#">سياسة الخصوصية</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-error transition-colors" href="#">الشروط والأحكام</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-error transition-colors" href="#">اتصل بنا</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-error transition-colors" href="#">الفروع</a>
+</nav>
+</div>
+</footer>
+</body></html>

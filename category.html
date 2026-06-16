@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الصالونات - جاليري مارينا للاثاث الفرنسي</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-bright": "#ffffff",
+                "on-primary-container": "#908D8D",
+                "tertiary-fixed-dim": "#908D8D",
+                "outline-variant": "#FAE6E4",
+                "tertiary-fixed": "#FAE6E4",
+                "on-secondary-container": "#5A5959",
+                "on-error": "#ffffff",
+                "on-primary": "#ffffff",
+                "primary-container": "#050404",
+                "primary-fixed-dim": "#908D8D",
+                "on-tertiary-fixed": "#050404",
+                "on-tertiary-fixed-variant": "#5A5959",
+                "on-secondary-fixed": "#050404",
+                "surface-container-high": "#FAE6E4",
+                "surface-container": "#FAE6E4",
+                "secondary": "#5A5959",
+                "tertiary-container": "#050404",
+                "surface-variant": "#FAE6E4",
+                "on-secondary-fixed-variant": "#5A5959",
+                "surface-dim": "#908D8D",
+                "surface-tint": "#908D8D",
+                "primary-fixed": "#FAE6E4",
+                "error-container": "#FAE6E4",
+                "secondary-fixed": "#FAE6E4",
+                "secondary-fixed-dim": "#908D8D",
+                "on-primary-fixed": "#050404",
+                "inverse-primary": "#908D8D",
+                "on-surface": "#050404",
+                "tertiary": "#050404",
+                "on-error-container": "#050404",
+                "inverse-on-surface": "#FFFFFF",
+                "on-background": "#050404",
+                "surface": "#FFFFFF",
+                "secondary-container": "#FAE6E4",
+                "surface-container-highest": "#908D8D",
+                "surface-container-low": "#ffffff",
+                "on-primary-fixed-variant": "#5A5959",
+                "outline": "#908D8D",
+                "on-tertiary": "#ffffff",
+                "background": "#FFFFFF",
+                "inverse-surface": "#050404",
+                "surface-container-lowest": "#ffffff",
+                "on-surface-variant": "#5A5959",
+                "on-secondary": "#ffffff",
+                "primary": "#050404",
+                "on-tertiary-container": "#908D8D",
+                "error": "#C0504D"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "margin-desktop": "80px",
+                "section-gap": "120px",
+                "container-max": "1440px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Cairo", "sans-serif"
+                ],
+                "body-md": [
+                        "Cairo", "sans-serif"
+                ],
+                "headline-lg": [
+                        "Cairo", "sans-serif"
+                ],
+                "headline-lg-mobile": [
+                        "Cairo", "sans-serif"
+                ],
+                "display-lg": [
+                        "Cairo", "sans-serif"
+                ],
+                "headline-md": [
+                        "Cairo", "sans-serif"
+                ],
+                "label-md": [
+                        "Cairo", "sans-serif"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+      },
+    },
+  }
+</script>
+<style>
+        @font-face {
+            font-family: 'Cairo';
+            src: url('Assets/font/Cairo-VariableFont_slnt,wght.ttf') format('truetype');
+            font-weight: 200 1000;
+            font-style: normal;
+        }
+        body {
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Ambient Shadows */
+        .ambient-shadow {
+            box-shadow: 0 10px 40px rgba(5, 4, 4, 0.04);
+        }
+        .ambient-shadow-hover:hover {
+            box-shadow: 0 15px 50px rgba(5, 4, 4, 0.08);
+            transform: translateY(-2px);
+        }
+        
+        /* Transitions */
+        .smooth-transition {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        /* Custom Scrollbar for filters */
+        .filter-scroll::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .filter-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .filter-scroll::-webkit-scrollbar-thumb {
+            background-color: theme('colors.outline-variant');
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen font-body-md text-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-surface text-primary dark:text-primary-fixed-dim fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md shadow-[0_10px_40px_rgba(5,4,4,0.04)] shadow-sm smooth-transition">
+<div class="flex justify-between items-center px-gutter py-2 max-w-container-max mx-auto h-[100px]">
+<!-- Mobile Menu Button (Left) -->
+<button class="md:hidden text-on-surface hover:opacity-70 transition-opacity p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<!-- Logo (Center Mobile, Left Desktop) -->
+<div class="flex-shrink-0 flex items-center justify-center md:justify-start w-full md:w-auto absolute md:static left-0 h-full">
+<a href="home.html" class="pointer-events-auto block">
+<img alt="جاليري مارينا للاثاث الفرنسي Logo" class="h-16 w-auto object-contain rounded" src="Assets/logo.jpeg"/>
+</a>
+</div>
+<!-- Navigation Links (Center Desktop) -->
+<nav class="hidden md:flex flex-1 justify-center space-x-8 space-x-reverse">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="category.html">المجموعات</a>
+<a class="text-primary border-b border-primary pb-1 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="category.html">الصالونات</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="category.html">غرف النوم</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="category.html">السفرة</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-md text-label-md tracking-[0.1em] uppercase hover:opacity-70 transition-opacity" href="#">عن مارينا</a>
+</nav>
+<!-- Trailing Icons (Right - Removed Cart & Wishlist) -->
+<div class="flex items-center space-x-4 space-x-reverse w-[40px] justify-end">
+<button class="text-on-surface hover:opacity-70 transition-opacity scale-95 duration-200 ease-in-out p-2">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow pt-[140px] pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Category Header -->
+<section class="text-center mb-16 md:mb-24">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 hidden md:block">الصالونات الفرنسية</h1>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-4 md:hidden">الصالونات الفرنسية</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                تشكيلة استثنائية من الصالونات المصممة بعناية فائقة، تجسد الأناقة الفرنسية الكلاسيكية بلمسات عصرية. قطع فنية تضفي فخامة ورقياً على مساحتك الخاصة.
+            </p>
+</section>
+<div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+<!-- Filters Sidebar (Desktop) / Top (Mobile) -->
+<aside class="w-full lg:w-64 flex-shrink-0">
+<div class="sticky top-[140px]">
+<div class="flex justify-between items-center mb-6 lg:mb-8 border-b border-outline-variant/30 pb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">تصفية النتائج</h2>
+<button class="lg:hidden text-on-surface-variant flex items-center gap-2 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+                            فلتر
+                        </button>
+</div>
+<div class="hidden lg:block space-y-8">
+<!-- Filter Group 1 -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">النمط</h3>
+<ul class="space-y-3">
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 border border-outline rounded flex items-center justify-center group-hover:border-primary transition-colors">
+<div class="w-3 h-3 bg-primary rounded-[1px] hidden"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">كلاسيك لويس الخامس عشر</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 border border-outline rounded flex items-center justify-center group-hover:border-primary transition-colors">
+<div class="w-3 h-3 bg-primary rounded-[1px] hidden"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">نيو كلاسيك</span>
+</label>
+</li>
+<li>
+<label class="flex items-center gap-3 cursor-pointer group">
+<div class="w-5 h-5 border border-primary rounded flex items-center justify-center">
+<div class="w-3 h-3 bg-primary rounded-[1px]"></div>
+</div>
+<span class="font-body-md text-body-md text-on-surface">آرت ديكو</span>
+</label>
+</li>
+</ul>
+</div>
+<!-- Filter Group 2 -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">نوع الخشب</h3>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 bg-error text-white font-label-md text-label-md rounded-full transition-colors hover:opacity-80">زان</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant font-label-md text-label-md rounded-full transition-colors hover:bg-surface-container">موهوجني</button>
+<button class="px-4 py-2 bg-surface text-on-surface border border-outline-variant font-label-md text-label-md rounded-full transition-colors hover:bg-surface-container">جوز</button>
+</div>
+</div>
+<!-- Filter Group 3 -->
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-4">اللون الأساسي</h3>
+<div class="flex gap-3">
+<button aria-label="Beige" class="w-8 h-8 rounded-full border border-outline-variant bg-[#F5F5DC] shadow-sm hover:scale-110 transition-transform"></button>
+<button aria-label="Lavender" class="w-8 h-8 rounded-full border border-outline-variant bg-[#E6E6FA] shadow-sm hover:scale-110 transition-transform"></button>
+<button aria-label="White" class="w-8 h-8 rounded-full border-2 border-primary bg-[#FFFFFF] shadow-sm hover:scale-110 transition-transform"></button>
+<button aria-label="Silver" class="w-8 h-8 rounded-full border border-outline-variant bg-[#C0C0C0] shadow-sm hover:scale-110 transition-transform"></button>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<!-- Active Filters / Sort (Top of Grid) -->
+<div class="flex flex-wrap justify-between items-center mb-8 gap-4 hidden lg:flex">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface-variant">تم تطبيق:</span>
+<div class="flex items-center gap-1 bg-surface-container px-3 py-1.5 rounded-full">
+<span class="font-label-md text-label-md text-on-surface">آرت ديكو</span>
+<button class="text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="flex items-center gap-1 bg-error/10 text-error px-3 py-1.5 rounded-full border border-error/20">
+<span class="font-label-md text-label-md">زان</span>
+<button class="text-error hover:text-error/70 transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<button class="font-label-md text-label-md text-secondary hover:text-primary underline ml-2 transition-colors">مسح الكل</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-md text-label-md text-on-surface-variant">ترتيب حسب:</span>
+<select class="bg-transparent border-b border-outline-variant pb-1 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-0 cursor-pointer">
+<option>الأحدث</option>
+<option>السعر: من الأقل للأعلى</option>
+<option>السعر: من الأعلى للأقل</option>
+</select>
+</div>
+</div>
+<!-- Bento Grid Layout for Products -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-12">
+<!-- Product Card 1 (Large Image) -->
+<article class="col-span-1 md:col-span-2 xl:col-span-2 group flex flex-col gap-4 ambient-shadow-hover smooth-transition rounded-lg p-2 -m-2">
+<div class="relative w-full aspect-[16/9] overflow-hidden rounded bg-surface-container-low">
+<img alt="صالون لويس السادس عشر" class="w-full h-full object-cover group-hover:scale-105 smooth-transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGj2YAL5GU2XxvY-4hkEzMR-uwFXScspjmG1IUfw_sV6mlDPSup-Jhwzyzb5yEWDCx2xGEyBg9C79qxWy2yivXdh6GlqO5jKDZ_WvXhavJpV6HU2g2nuZnPoQ3qQniRdlj6rKfix--cVQ4s1T7gxHKjCWBPe58X-YSLIDCEcbLn5aHo2mmM8DFhPvaM1oCMRICie23zApFUyiGjlXwSuXXuci3w4eG1Y3ufWztbhbqEUr9AfYa8OshEORJreOHjX5UZgD3QjbKO2kO"/>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-error text-white font-label-md text-label-md rounded-full uppercase">جديد</span>
+</div>
+</div>
+<div class="flex justify-between items-start pt-2 px-2">
+<div>
+<h3 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-2 font-semibold">صالون لويس السادس عشر</h3>
+<p class="font-body-md text-body-md text-secondary max-w-md line-clamp-2">طقم صالون متكامل من الخشب الزان المحفور يدوياً، مكسو بقماش حريري فاخر بلون كريمي هادئ يعكس النور الطبيعي.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-body-lg text-body-lg text-on-surface font-medium mb-4">١٢٠,٠٠٠ ج.م</span>
+<a class="inline-flex items-center justify-center h-10 px-6 bg-error text-white font-label-md text-label-md rounded-[4px] hover:bg-error/90 transition-colors uppercase tracking-wider" href="product.html">
+                                    عرض التفاصيل
+                                </a>
+</div>
+</div>
+</article>
+<!-- Product Card 2 -->
+<article class="col-span-1 group flex flex-col gap-4 ambient-shadow-hover smooth-transition rounded-lg p-2 -m-2">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded bg-surface-container-low">
+<img alt="كرسي ماريا أنطوانيت" class="w-full h-full object-cover group-hover:scale-105 smooth-transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAqVZFIJARbVAr1DWxoqPQ_rW1mWF-q4vnXF--SgPgSTHF6gK3DAKRr76TFLektrgqgsjdBzvMJVcOmdrBi00FYajnLJdCqMyqeKAjPwDTuYMJHDsp2QTw6QZbdAzIInNGvY3jAH8MeUlY4jm7yFsKtf_nnjVb_pHYwkZql8tZPfRktEzMIvAwZOnx-tA4UqgrX66-x7x5T7_o0ilz9vwRL4DfUQ8WXYFm_OawUGHou_Uw-EcTdnOXAadOQxM7fZ5svF2Aaz-kBums"/>
+</div>
+<div class="flex justify-between items-start pt-2 px-2">
+<div>
+<h3 class="font-headline-lg text-headline-md text-on-surface mb-1 font-semibold">كرسي ماريا أنطوانيت</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2">قطعة مفردة</p>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1">٢٥,٠٠٠ ج.م</span>
+</div>
+<div class="px-2 pb-2 mt-auto">
+<a class="inline-flex w-full items-center justify-center h-10 px-6 bg-transparent border border-[#908D8D] text-on-surface font-label-md text-label-md rounded-[4px] hover:bg-surface-container transition-colors uppercase tracking-wider hover:border-error hover:text-error" href="product.html">
+                                display Details
+                            </a>
+</div>
+</article>
+<!-- Product Card 3 -->
+<article class="col-span-1 group flex flex-col gap-4 ambient-shadow-hover smooth-transition rounded-lg p-2 -m-2">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded bg-surface-container-low">
+<img alt="أريكة شاتو" class="w-full h-full object-cover group-hover:scale-105 smooth-transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALDF0mZcfv5DmZXpRvie2q4HSWEvMPz5jtnm2anbR4d4ICmI-odqn9-3rX12Ato23Rc2qNYQOaWz_TwSyQYb1lOEiS5770OExVLp-NsWCPt2WnS5Yw9twdrOfDOyI_sGAqA7MOT8TVIY6qzavQ0y3kU49NirYSVIZvmzdPYG1CkmAEtmshBJvXTOwtXk_jtICiWD3qWlKfOfHKGzQ2E6zms79aykxzKNOCWxGNgdGkOn0eHP1AQxFSlYvq9DBRmsrMIZxNy5w_auGD"/>
+<div class="absolute bottom-4 left-4 flex gap-2">
+<span class="px-3 py-1 bg-surface-variant text-on-surface-variant font-label-md text-label-md rounded-full uppercase">المقعد الأكثر مبيعاً</span>
+</div>
+</div>
+<div class="flex justify-between items-start pt-2 px-2">
+<div>
+<h3 class="font-headline-lg text-headline-md text-on-surface mb-1 font-semibold">أريكة شاتو</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2">نيو كلاسيك</p>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1">٤٥,٠٠٠ ج.م</span>
+</div>
+<div class="px-2 pb-2 mt-auto">
+<a class="inline-flex w-full items-center justify-center h-10 px-6 bg-transparent border border-[#908D8D] text-on-surface font-label-md text-label-md rounded-[4px] hover:bg-surface-container transition-colors uppercase tracking-wider hover:border-error hover:text-error" href="product.html">
+                                display Details
+                            </a>
+</div>
+</article>
+<!-- Product Card 4 -->
+<article class="col-span-1 group flex flex-col gap-4 ambient-shadow-hover smooth-transition rounded-lg p-2 -m-2">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded bg-surface-container-low">
+<img alt="طاولة قهوة فرساي" class="w-full h-full object-cover group-hover:scale-105 smooth-transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHH6z9lAGiETwmwqjN7-mdF0dKLEk1Aow_59pvE3OIqUHzCfX14HIfbfbMiCJc9xwDcBdKM_GKsndFKRTz_7QT-FGPWp4Fpsik_E6S85LfyvE8Cbo8MpQDjCmuKsxhZdItByfZVB4huzYU-WyIyQ_aU2tmbnN4Yl_0mP_pOf30neGbE7EmV82beC9xS0aYL3K0bcmSuliES3ZmM4pO0zIQ33M2TX_XS_H4EQP7I7_NaCLr-MhNHYC-599830VdV1riZMVLvZSuNfbj"/>
+</div>
+<div class="flex justify-between items-start pt-2 px-2">
+<div>
+<h3 class="font-headline-lg text-headline-md text-on-surface mb-1 font-semibold">طاولة قهوة فرساي</h3>
+<p class="font-label-md text-label-md text-secondary uppercase tracking-widest mb-2">طاولات وسط</p>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium mt-1">١٨,٥٠٠ ج.م</span>
+</div>
+<div class="px-2 pb-2 mt-auto">
+<a class="inline-flex w-full items-center justify-center h-10 px-6 bg-transparent border border-[#908D8D] text-on-surface font-label-md text-label-md rounded-[4px] hover:bg-surface-container transition-colors uppercase tracking-wider hover:border-error hover:text-error" href="product.html">
+                                display Details
+                            </a>
+</div>
+</article>
+<!-- Product Card 5 (Wide) -->
+<article class="col-span-1 md:col-span-2 xl:col-span-2 group flex flex-col gap-4 ambient-shadow-hover smooth-transition rounded-lg p-2 -m-2 xl:col-start-2">
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded bg-surface-container-low">
+<img alt="صالون بوردو المخملي" class="w-full h-full object-cover group-hover:scale-105 smooth-transition duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqWeAdIIN97VvkIqzxAxOueTMg6pTGTINrFJBe0122btcyiy_HZrBy0n2a4b_FcNF78o8MienDmWRJYeNAZMdhfwpZg82NwhXm4OSo2XNSqyhUYtS6PsujaKpY-RA3ceEYwyWoo3ZmwRbMyLIpgf2TzCsCTM2nvmBWpkC2x1mCLOyEaTRUOAetfXrZ8HpY0SyZkSjT0OEK808MMcaHCaJfH46P0Gi-r9uDQ28Ib8PwUxfZyGC2qbYbQ4wK_xr1gwxjypaUiZeOVd9H"/>
+</div>
+<div class="flex justify-between items-center pt-2 px-2">
+<div>
+<h3 class="font-headline-lg text-headline-md md:text-headline-lg text-on-surface mb-1 font-semibold">صالون بوردو المخملي</h3>
+<p class="font-body-md text-body-md text-secondary">آرت ديكو - مخمل بلون Soft Blush</p>
+</div>
+<div class="flex items-center gap-6">
+<span class="font-body-lg text-body-lg text-on-surface font-medium hidden md:block">٨٥,٠٠٠ ج.م</span>
+<a class="inline-flex items-center justify-center h-10 px-6 bg-error text-white font-label-md text-label-md rounded-[4px] hover:bg-error/90 transition-colors uppercase tracking-wider" href="product.html">
+                                    عرض التفاصيل
+                                </a>
+</div>
+</div>
+</article>
+</div>
+<!-- Load More / Pagination -->
+<div class="mt-16 flex justify-center">
+<button class="inline-flex items-center justify-center h-12 px-8 bg-surface border border-outline-variant text-on-surface font-label-md text-label-md rounded-[4px] hover:border-error hover:text-error transition-colors uppercase tracking-widest gap-2">
+                        تحميل المزيد من المجموعات
+                        <span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-inverse-surface text-secondary dark:text-secondary-fixed w-full border-t border-outline-variant/30 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-20 gap-8 w-full max-w-container-max mx-auto font-body-md text-body-md">
+<div class="mb-8 md:mb-0 text-center md:text-right">
+<p class="font-headline-lg text-headline-lg text-on-surface dark:text-surface mb-2">جاليري مارينا</p>
+<p>© ٢٠٢٦ جاليري مارينا للاثاث الفرنسي. جميع الحقوق محفوظة.</p>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed mt-2">
+    تم التصميم بواسطة <a href="https://nova-4solutions.vercel.app" target="_blank" class="hover:text-error underline transition-colors">Nova Solutions</a>
+</p>
+</div>
+<nav class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8 font-label-md text-label-md">
+<a class="text-secondary hover:text-error transition-colors" href="#">سياسة الخصوصية</a>
+<a class="text-secondary hover:text-error transition-colors" href="#">الشروط والأحكام</a>
+<a class="text-secondary hover:text-error transition-colors" href="#">اتصل بنا</a>
+<a class="text-secondary hover:text-error transition-colors" href="#">الفروع</a>
+</nav>
+</div>
+</footer>
+</body></html>

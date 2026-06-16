@@ -1,0 +1,24 @@
+# Dependency directories
+react-app/node_modules/
+react-app/dist/
+react-app/dist-ssr/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Environment files
+react-app/.env
+react-app/.env.local
+react-app/.env.*.local
+
+# Editor settings
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
