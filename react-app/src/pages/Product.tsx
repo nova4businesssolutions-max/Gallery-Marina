@@ -117,7 +117,7 @@ export default function Product() {
   const encodedText = encodeURIComponent(
     `مرحباً جاليري مارينا، أود الاستفسار عن منتج "${product.name}" (كود المنتج: ${product.product_code}) المعروض على موقعكم الإلكتروني.`
   );
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=201066645046&text=${encodedText}`;
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=201001921359&text=${encodedText}`;
 
   // Spec parsing or defaults
   const isOak = product.name.includes('بلوط') || product.description.includes('بلوط');

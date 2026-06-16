@@ -275,12 +275,12 @@ export default function Home() {
               <div>
                 <h4 className="font-bold text-on-surface">العنوان والفرع الرئيسي</h4>
                 <a 
-                  href="https://maps.app.goo.gl/FiBS4LwmaiXpyjWT7"
+                  href="https://maps.app.goo.gl/9tX6fkebEz8h372w8"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-on-surface-variant text-sm mt-1 hover:text-error underline transition-colors"
                 >
-                  دمياط، شارع كورنيش النيل، أمام الغرفة التجارية، مصر
+                  أسيوط، تقسيم فريال، شارع محمود رشوان، مصر
                 </a>
               </div>
             </div>
@@ -290,11 +290,11 @@ export default function Home() {
               <div>
                 <h4 className="font-bold text-on-surface">اتصل بنا</h4>
                 <a 
-                  href="tel:+201066645046" 
+                  href="tel:+201001921359" 
                   className="text-on-surface-variant text-sm mt-1 hover:text-error transition-colors"
                   dir="ltr"
                 >
-                  +20 10 66645046
+                  +20 100 192 1359
                 </a>
               </div>
             </div>
@@ -340,7 +340,7 @@ export default function Home() {
                 </svg>
               </a>
               <a 
-                href="https://api.whatsapp.com/send?phone=201066645046" 
+                href="https://api.whatsapp.com/send?phone=201001921359" 
                 target="_blank" 
                 rel="noreferrer" 
                 className="w-10 h-10 rounded-full border border-outline bg-white flex items-center justify-center text-secondary hover:text-error hover:border-error transition-all"
@@ -358,7 +358,7 @@ export default function Home() {
         <div className="lg:col-span-7 h-[350px] md:h-[450px] w-full rounded-2xl overflow-hidden shadow-lg border border-outline-variant">
           <iframe 
             title="خريطة الفرع الرئيسي لجاليري مارينا"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3413.0645600378036!2d31.815250424564882!3d31.412354974263728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f9e376045952d7%3A0xc3c5f46ad031804f!2z2KfZhNi62LHYgdmZINin2YTYqtmI2KfYsdmK2Kk!5e0!3m2!1sar!2seg!4v1718298000000!5m2!1sar!2seg" 
+            src="https://maps.google.com/maps?q=27.1908594,31.1808302&z=17&output=embed" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
