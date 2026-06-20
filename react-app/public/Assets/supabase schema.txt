@@ -103,4 +103,4 @@ File: Code
 ```
 npx skills add supabase/agent-skills
 ```
-bucket name ="Gallery Marina Bucket"
+bucket name ="Nova-Bucket"

@@ -134,7 +134,7 @@ export default function AdminDashboard() {
     setTimeout(() => setStatusMsg({ type: '', text: '' }), 5000);
   };
 
-  // Helper: Converts & uploads file to Supabase Storage bucket "Gallery Marina Bucket"
+  // Helper: Converts & uploads file to Supabase Storage bucket "Nova-Bucket"
   const uploadImage = async (file: File, folder: string): Promise<string> => {
     try {
       // Convert image to optimized webp client-side
@@ -144,7 +144,7 @@ export default function AdminDashboard() {
       const filePath = `${folder}/${fileName}`;
 
       const { error } = await supabase.storage
-        .from('Gallery Marina Bucket')
+        .from('Nova-Bucket')
         .upload(filePath, webpBlob, {
           contentType: 'image/webp',
           upsert: true
@@ -157,7 +157,7 @@ export default function AdminDashboard() {
 
       // Get public URL
       const { data: { publicUrl } } = supabase.storage
-        .from('Gallery Marina Bucket')
+        .from('Nova-Bucket')
         .getPublicUrl(filePath);
 
       return publicUrl;

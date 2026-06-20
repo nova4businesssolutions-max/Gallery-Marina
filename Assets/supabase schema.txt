@@ -105,7 +105,7 @@ File: Code
 ```
 npx skills add supabase/agent-skills
 ```
-bucket name ="Gallery Marina Bucket"
+bucket name ="Nova-Bucket"
 
 -- --- ROW LEVEL SECURITY (RLS) POLICIES TROUBLESHOOTING ---
 -- If you get a "new row violates row-level security policy" error when inserting/updating:
@@ -139,9 +139,9 @@ bucket name ="Gallery Marina Bucket"
 -- CREATE POLICY "Allow public read access" ON public.admin FOR SELECT USING (true);
 
 -- --- STORAGE BUCKET RLS POLICIES (If upload violates security policies) ---
--- Run these commands to allow public upload, edit, and delete inside the 'Gallery Marina Bucket' bucket:
+-- Run these commands to allow public upload, edit, and delete inside the 'Nova-Bucket' bucket:
 
--- CREATE POLICY "Allow public uploads" ON storage.objects FOR INSERT TO public WITH CHECK (bucket_id = 'Gallery Marina Bucket');
--- CREATE POLICY "Allow public updates" ON storage.objects FOR UPDATE TO public USING (bucket_id = 'Gallery Marina Bucket') WITH CHECK (bucket_id = 'Gallery Marina Bucket');
--- CREATE POLICY "Allow public deletes" ON storage.objects FOR DELETE TO public USING (bucket_id = 'Gallery Marina Bucket');
--- CREATE POLICY "Allow public downloads" ON storage.objects FOR SELECT TO public USING (bucket_id = 'Gallery Marina Bucket');
+-- CREATE POLICY "Allow public uploads" ON storage.objects FOR INSERT TO public WITH CHECK (bucket_id = 'Nova-Bucket');
+-- CREATE POLICY "Allow public updates" ON storage.objects FOR UPDATE TO public USING (bucket_id = 'Nova-Bucket') WITH CHECK (bucket_id = 'Nova-Bucket');
+-- CREATE POLICY "Allow public deletes" ON storage.objects FOR DELETE TO public USING (bucket_id = 'Nova-Bucket');
+-- CREATE POLICY "Allow public downloads" ON storage.objects FOR SELECT TO public USING (bucket_id = 'Nova-Bucket');
