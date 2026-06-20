@@ -53,19 +53,23 @@ async function seed() {
     const categoriesToSeed = [
       {
         name: 'الافضل مبيعا',
-        image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBaL1jgFF90YkV5OS01b1ziWqpUG_obypmZurdK45Wplpb9cjJ7LvtxxhLYDPCp3dIPvfCSrp-oJRagT1sygrFSb1EJL45ADjA1mSZvbBDqBF5x5v5AIXMjSpKJqoQfcavFq6ZjDZQuIM1Xxx-U_xS87mCUiDi_ISHVyKc47bx2_TyvPDAtHLTliDFHJiSXqaSIq4HJePm8C7PSOYOw0eU-vN-WIWP2BTQN0Fi6_2WBUTSs1Pcy4lcLvj-ehE5ZpQIvtA9ZPZOW2g7X'
+        image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBaL1jgFF90YkV5OS01b1ziWqpUG_obypmZurdK45Wplpb9cjJ7LvtxxhLYDPCp3dIPvfCSrp-oJRagT1sygrFSb1EJL45ADjA1mSZvbBDqBF5x5v5AIXMjSpKJqoQfcavFq6ZjDZQuIM1Xxx-U_xS87mCUiDi_ISHVyKc47bx2_TyvPDAtHLTliDFHJiSXqaSIq4HJePm8C7PSOYOw0eU-vN-WIWP2BTQN0Fi6_2WBUTSs1Pcy4lcLvj-ehE5ZpQIvtA9ZPZOW2g7X',
+        code_seed: 'BEST'
       },
       {
         name: 'الصالونات',
-        image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzIZRL02KqwNX4iMWtmQAA6e8yEq69022IizBP8NPREytOCIRbEbrUd8sVKaq_1a8dIgtF0MExaZtcpfim3ErVC4vThgVf3r5OTL_P6ZqgO_RZuJqZDLv4hnPbyl-HSBaP0cSAGsILfAvKF8nKxcapBijDvG3eaDWzhTaquRD82bivWgTHEKN2KZhmt1zOTvldzMSEhkpOcSF0MorXnWqC9SvJQz-fqRGd5YD8kbXM3ZTCmtclX-B29wiHq9Gt86BL38kyg9nDuukh'
+        image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzIZRL02KqwNX4iMWtmQAA6e8yEq69022IizBP8NPREytOCIRbEbrUd8sVKaq_1a8dIgtF0MExaZtcpfim3ErVC4vThgVf3r5OTL_P6ZqgO_RZuJqZDLv4hnPbyl-HSBaP0cSAGsILfAvKF8nKxcapBijDvG3eaDWzhTaquRD82bivWgTHEKN2KZhmt1zOTvldzMSEhkpOcSF0MorXnWqC9SvJQz-fqRGd5YD8kbXM3ZTCmtclX-B29wiHq9Gt86BL38kyg9nDuukh',
+        code_seed: 'SLN'
       },
       {
         name: 'غرف النوم',
-        image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCnZeItf0p4FSSnB2dnOgL1_BZoswDUgQSlnNEnhbry6GdAjWZbapOstyzdBjILU0VQ24EoxEBV60poamr7WPOayawIGvtcPrvaKxRv5JAqi3VYenTPwfi9dI3s5uUG_jQJdglYFyMa86vOHXXZ8V-sLKOjbAzEgL3Cmw28oSzqktK-ZUp77MDu0FzpENNK9i_7XFfg7LEFvkAqK_0n69JrnXlOsm9GajOUO10V8d54k0HbNM_Ld0Pv_BGWiihicvMQE7ep87QyzoAy'
+        image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCnZeItf0p4FSSnB2dnOgL1_BZoswDUgQSlnNEnhbry6GdAjWZbapOstyzdBjILU0VQ24EoxEBV60poamr7WPOayawIGvtcPrvaKxRv5JAqi3VYenTPwfi9dI3s5uUG_jQJdglYFyMa86vOHXXZ8V-sLKOjbAzEgL3Cmw28oSzqktK-ZUp77MDu0FzpENNK9i_7XFfg7LEFvkAqK_0n69JrnXlOsm9GajOUO10V8d54k0HbNM_Ld0Pv_BGWiihicvMQE7ep87QyzoAy',
+        code_seed: 'BD'
       },
       {
         name: 'السفرة',
-        image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBaL1jgFF90YkV5OS01b1ziWqpUG_obypmZurdK45Wplpb9cjJ7LvtxxhLYDPCp3dIPvfCSrp-oJRagT1sygrFSb1EJL45ADjA1mSZvbBDqBF5x5v5AIXMjSpKJqoQfcavFq6ZjDZQuIM1Xxx-U_xS87mCUiDi_ISHVyKc47bx2_TyvPDAtHLTliDFHJiSXqaSIq4HJePm8C7PSOYOw0eU-vN-WIWP2BTQN0Fi6_2WBUTSs1Pcy4lcLvj-ehE5ZpQIvtA9ZPZOW2g7X'
+        image_url: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBaL1jgFF90YkV5OS01b1ziWqpUG_obypmZurdK45Wplpb9cjJ7LvtxxhLYDPCp3dIPvfCSrp-oJRagT1sygrFSb1EJL45ADjA1mSZvbBDqBF5x5v5AIXMjSpKJqoQfcavFq6ZjDZQuIM1Xxx-U_xS87mCUiDi_ISHVyKc47bx2_TyvPDAtHLTliDFHJiSXqaSIq4HJePm8C7PSOYOw0eU-vN-WIWP2BTQN0Fi6_2WBUTSs1Pcy4lcLvj-ehE5ZpQIvtA9ZPZOW2g7X',
+        code_seed: 'SF'
       }
     ];
 

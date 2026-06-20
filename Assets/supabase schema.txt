@@ -6,6 +6,7 @@ CREATE TABLE public.categories (
   name text NOT NULL,
   image_url text,
   created_at timestamp without time zone DEFAULT now(),
+  code_seed text NOT NULL DEFAULT '', -- Note: stored as text/varchar to hold string seeds like 'GMK'
   CONSTRAINT categories_pkey PRIMARY KEY (id)
 );
 CREATE TABLE public.products (
@@ -16,6 +17,7 @@ CREATE TABLE public.products (
   price numeric NOT NULL,
   main_image_url text NOT NULL,
   created_at timestamp without time zone DEFAULT now(),
+  product_code text,
   CONSTRAINT products_pkey PRIMARY KEY (id),
   CONSTRAINT products_category_id_fkey FOREIGN KEY (category_id) REFERENCES public.categories(id)
 );

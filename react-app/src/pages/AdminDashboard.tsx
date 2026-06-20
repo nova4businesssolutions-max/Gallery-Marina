@@ -7,6 +7,7 @@ interface Category {
   id: number;
   name: string;
   image_url: string;
+  code_seed: string;
 }
 
 interface Product {
@@ -30,6 +31,7 @@ export default function AdminDashboard() {
   const [catEditing, setCatEditing] = useState<Category | null>(null);
   const [catFormName, setCatFormName] = useState('');
   const [catFormImgUrl, setCatFormImgUrl] = useState('');
+  const [catFormCodeSeed, setCatFormCodeSeed] = useState('');
   const [catFile, setCatFile] = useState<File | null>(null);
 
   const [showProdModal, setShowProdModal] = useState(false);
@@ -65,6 +67,44 @@ export default function AdminDashboard() {
     // 2. Fetch Dashboard Data
     fetchData();
   }, [navigate]);
+
+  // Auto-generate product code based on category's code_seed
+  useEffect(() => {
+    if (prodFormCatId) {
+      const selectedCat = categories.find(c => c.id === Number(prodFormCatId));
+      if (selectedCat && selectedCat.code_seed) {
+        // If editing and the selected category is the original category of the product, keep original code
+        if (prodEditing && Number(prodFormCatId) === prodEditing.category_id) {
+          setProdFormCode(prodEditing.product_code);
+          return;
+        }
+        
+        // Otherwise, auto-generate!
+        const seed = selectedCat.code_seed;
+        // Find products in this category (excluding the current editing product if applicable)
+        const catProducts = products.filter(p => p.category_id === Number(prodFormCatId) && p.id !== prodEditing?.id);
+        
+        let maxNum = 0;
+        catProducts.forEach(p => {
+          if (p.product_code && p.product_code.startsWith(seed)) {
+            const numPart = p.product_code.substring(seed.length);
+            const num = parseInt(numPart, 10);
+            if (!isNaN(num) && num > maxNum) {
+              maxNum = num;
+            }
+          }
+        });
+        const nextNum = maxNum + 1;
+        const newCode = `${seed}${String(nextNum).padStart(3, '0')}`;
+        setProdFormCode(newCode);
+      } else {
+        // If the category has no seed code yet (e.g. older categories or empty), we clear it or generate a placeholder
+        setProdFormCode('');
+      }
+    } else {
+      setProdFormCode('');
+    }
+  }, [prodFormCatId, categories, products, prodEditing]);
 
   async function fetchData() {
     setLoading(true);
@@ -132,6 +172,7 @@ export default function AdminDashboard() {
     setCatEditing(null);
     setCatFormName('');
     setCatFormImgUrl('');
+    setCatFormCodeSeed('');
     setCatFile(null);
     setShowCatModal(true);
   };
@@ -140,6 +181,7 @@ export default function AdminDashboard() {
     setCatEditing(cat);
     setCatFormName(cat.name);
     setCatFormImgUrl(cat.image_url);
+    setCatFormCodeSeed(cat.code_seed || '');
     setCatFile(null);
     setShowCatModal(true);
   };
@@ -164,7 +206,7 @@ export default function AdminDashboard() {
         // Edit Category
         const { error } = await supabase
           .from('categories')
-          .update({ name: catFormName, image_url: imageUrl })
+          .update({ name: catFormName, image_url: imageUrl, code_seed: catFormCodeSeed })
           .eq('id', catEditing.id);
         
         if (error) throw error;
@@ -173,7 +215,7 @@ export default function AdminDashboard() {
         // Add Category
         const { error } = await supabase
           .from('categories')
-          .insert([{ name: catFormName, image_url: imageUrl }]);
+          .insert([{ name: catFormName, image_url: imageUrl, code_seed: catFormCodeSeed }]);
         
         if (error) throw error;
         showStatus('تم إضافة الفئة بنجاح!');
@@ -457,8 +499,11 @@ export default function AdminDashboard() {
                   <img src={cat.image_url} alt={cat.name} className="w-full h-full object-cover" />
                 </div>
                 <div className="p-4 flex-grow flex flex-col justify-between">
-                  <h4 className="font-bold text-on-surface text-lg mb-4">{cat.name}</h4>
-                  <div className="flex justify-end gap-2 border-t border-outline-variant/30 pt-3">
+                  <div>
+                    <h4 className="font-bold text-on-surface text-lg mb-1">{cat.name}</h4>
+                    <span className="text-xs text-secondary font-medium">رمز الفئة: {cat.code_seed || 'بدون رمز'}</span>
+                  </div>
+                  <div className="flex justify-end gap-2 border-t border-outline-variant/30 pt-3 mt-4">
                     <button
                       onClick={() => openCatEdit(cat)}
                       className="text-primary hover:text-error text-xs font-bold px-3 py-1.5 rounded hover:bg-surface-container transition-colors flex items-center gap-1"
@@ -564,6 +609,19 @@ export default function AdminDashboard() {
               </div>
 
               <div>
+                <label className="block text-sm font-bold text-on-surface-variant mb-2">رمز كود المنتج (Seed Code)</label>
+                <input
+                  type="text"
+                  value={catFormCodeSeed}
+                  onChange={(e) => setCatFormCodeSeed(e.target.value.toUpperCase())}
+                  placeholder="مثال: GMK"
+                  className="w-full px-4 py-2 border border-outline rounded-lg focus:outline-none focus:border-error text-left"
+                  required
+                />
+                <p className="text-xs text-on-surface-variant mt-1">يُسخدم لتوليد كود المنتج تلقائياً (مثال: GMK001، GMK002)</p>
+              </div>
+
+              <div>
                 <label className="block text-sm font-bold text-on-surface-variant mb-2">رفع صورة الفئة (WebP تلقائي)</label>
                 <input
                   type="file"
@@ -633,13 +691,13 @@ export default function AdminDashboard() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-on-surface-variant mb-2">كود المنتج</label>
+                  <label className="block text-sm font-bold text-on-surface-variant mb-2">كود المنتج (توليد تلقائي)</label>
                   <input
                     type="text"
                     value={prodFormCode}
-                    onChange={(e) => setProdFormCode(e.target.value)}
-                    placeholder="مثال: SL-016"
-                    className="w-full px-4 py-2 border border-outline rounded-lg focus:outline-none focus:border-error text-left"
+                    readOnly
+                    placeholder="سيتم توليده تلقائياً"
+                    className="w-full px-4 py-2 border border-outline rounded-lg bg-surface-container-low text-secondary text-left font-semibold cursor-not-allowed focus:outline-none"
                     required
                   />
                 </div>
