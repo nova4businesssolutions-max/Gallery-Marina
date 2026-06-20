@@ -53,25 +53,20 @@ export default function Home() {
       if (catData) {
         setCategories(catData);
         
-        // Find best selling category (الافضل مبيعا)
-        const bestSellerCat = catData.find(c => c.name.includes('الافضل مبيعا') || c.name.includes('أفضل') || c.name.includes('بيع'));
-        if (bestSellerCat) {
-          const { data: prodData } = await supabase
-            .from('products')
-            .select('*')
-            .eq('category_id', bestSellerCat.id);
-          if (prodData) {
-            setBestSellers(prodData);
-          }
-        } else if (catData.length > 0) {
-          // Fallback: take products from the first category
-          const { data: prodData } = await supabase
-            .from('products')
-            .select('*')
-            .limit(6);
-          if (prodData) {
-            setBestSellers(prodData);
-          }
+        // Fetch first product of each category
+        const { data: allProducts } = await supabase
+          .from('products')
+          .select('*')
+          .order('id', { ascending: true });
+        
+        if (allProducts) {
+          const firstProductsMap = new Map<number, Product>();
+          allProducts.forEach(prod => {
+            if (prod.category_id && !firstProductsMap.has(prod.category_id)) {
+              firstProductsMap.set(prod.category_id, prod);
+            }
+          });
+          setBestSellers(Array.from(firstProductsMap.values()));
         }
       }
     }
