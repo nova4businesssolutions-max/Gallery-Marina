@@ -160,7 +160,7 @@ export default function Home() {
             <div className="w-16 h-1 bg-error mx-auto mt-4 rounded-full"></div>
           </div>
 
-          <div className="relative w-full max-w-4xl mx-auto overflow-hidden rounded-2xl shadow-xl bg-white border border-outline-variant/30">
+          <div className="relative w-full max-w-5xl mx-auto overflow-hidden rounded-2xl shadow-xl bg-white border border-outline-variant/30">
             {/* Sliding Container */}
             <div 
               className="flex transition-transform duration-700 ease-in-out"
@@ -169,7 +169,7 @@ export default function Home() {
               {bestSellers.map((prod) => (
                 <div key={prod.id} className="min-w-full flex flex-col md:flex-row items-stretch">
                   {/* Product Image */}
-                  <div className="w-full md:w-1/2 aspect-[4/3] md:aspect-auto relative overflow-hidden bg-surface-container">
+                  <div className="w-full md:w-[60%] aspect-[4/3] md:aspect-auto relative overflow-hidden bg-surface-container">
                     <img 
                       src={prod.main_image_url} 
                       alt={prod.name} 
@@ -177,7 +177,7 @@ export default function Home() {
                     />
                   </div>
                   {/* Product Info */}
-                  <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center gap-4 text-right">
+                  <div className="w-full md:w-[40%] p-6 md:p-8 flex flex-col justify-center gap-4 text-right">
                     <span className="text-secondary font-bold text-xs uppercase tracking-wider">الرمز: {prod.product_code}</span>
                     <h3 className="text-2xl md:text-3xl font-bold text-on-surface">{prod.name}</h3>
                     <p className="text-on-surface-variant text-sm md:text-base leading-relaxed line-clamp-4">
