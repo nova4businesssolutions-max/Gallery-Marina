@@ -137,3 +137,11 @@ bucket name ="Gallery Marina Bucket"
 
 -- ALTER TABLE public.admin ENABLE ROW LEVEL SECURITY;
 -- CREATE POLICY "Allow public read access" ON public.admin FOR SELECT USING (true);
+
+-- --- STORAGE BUCKET RLS POLICIES (If upload violates security policies) ---
+-- Run these commands to allow public upload, edit, and delete inside the 'Gallery Marina Bucket' bucket:
+
+-- CREATE POLICY "Allow public uploads" ON storage.objects FOR INSERT TO public WITH CHECK (bucket_id = 'Gallery Marina Bucket');
+-- CREATE POLICY "Allow public updates" ON storage.objects FOR UPDATE TO public USING (bucket_id = 'Gallery Marina Bucket') WITH CHECK (bucket_id = 'Gallery Marina Bucket');
+-- CREATE POLICY "Allow public deletes" ON storage.objects FOR DELETE TO public USING (bucket_id = 'Gallery Marina Bucket');
+-- CREATE POLICY "Allow public downloads" ON storage.objects FOR SELECT TO public USING (bucket_id = 'Gallery Marina Bucket');
