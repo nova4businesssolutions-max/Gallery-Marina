@@ -119,12 +119,6 @@ export default function Product() {
   );
   const whatsappUrl = `https://api.whatsapp.com/send?phone=201001921359&text=${encodedText}`;
 
-  // Spec parsing or defaults
-  const isOak = product.name.includes('بلوط') || product.description.includes('بلوط');
-  const isVelvet = product.name.includes('مخمل') || product.description.includes('مخمل');
-  const woodType = isOak ? 'خشب بلوط طبيعي فاخر' : 'خشب زان أحمر روماني عالي الجودة';
-  const fabricType = isVelvet ? 'مخمل بلون Soft Blush ناعم ومريح' : 'حرير طبيعي فاخر مطرز يدوياً';
-
   return (
     <main className="flex-grow pt-[130px] pb-24 px-6 md:px-margin-desktop max-w-container-max mx-auto w-full text-right">
       
@@ -140,7 +134,7 @@ export default function Product() {
         )}
         <span className="text-on-surface font-bold truncate max-w-[200px]">{product.name}</span>
       </nav>
-
+ 
       {/* Product Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         
@@ -202,31 +196,6 @@ export default function Product() {
             <p className="text-on-surface-variant text-sm md:text-base leading-relaxed">
               {product.description}
             </p>
-          </div>
-          
-          <hr className="border-outline-variant/30" />
-          
-          {/* Tech Specs */}
-          <div className="space-y-3">
-            <h3 className="text-sm font-bold text-secondary uppercase tracking-wider">المواصفات الفنية للقطعة</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-on-surface">
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-error"></span>
-                <span>نوع الخشب: {woodType}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-error"></span>
-                <span>الفرش والقماش: {fabricType}</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-error"></span>
-                <span>الدهان والمظهر: ورق ذهب معتق أو مطفي</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-error"></span>
-                <span>الضمان: ٥ سنوات ضد عيوب الصناعة</span>
-              </li>
-            </ul>
           </div>
           
           <hr className="border-outline-variant/30" />
