@@ -48,6 +48,7 @@ export default function AdminDashboard() {
   // Processing indicators
   const [submitting, setSubmitting] = useState(false);
   const [statusMsg, setStatusMsg] = useState({ type: '', text: '' });
+  const [totalImagesCount, setTotalImagesCount] = useState(0);
 
   useEffect(() => {
     // 1. Verify admin session
@@ -121,6 +122,16 @@ export default function AdminDashboard() {
       .order('id', { ascending: false });
       
     if (prodData) setProducts(prodData);
+
+    // Fetch count of additional images
+    const { count: addImagesCount } = await supabase
+      .from('product_images')
+      .select('*', { count: 'exact', head: true });
+      
+    const mainImagesCount = prodData ? prodData.filter(p => p.main_image_url).length : 0;
+    const catImagesCount = catData ? catData.filter(c => c.image_url).length : 0;
+    setTotalImagesCount(mainImagesCount + catImagesCount + (addImagesCount || 0));
+
     setLoading(false);
   }
 
@@ -132,6 +143,18 @@ export default function AdminDashboard() {
   const showStatus = (text: string, type = 'success') => {
     setStatusMsg({ type, text });
     setTimeout(() => setStatusMsg({ type: '', text: '' }), 5000);
+  };
+
+  // Helper: Extract relative file path from a Supabase Storage URL
+  const getStoragePathFromUrl = (url: string, bucketName: string = 'Gallery Marina Bucket'): string | null => {
+    if (!url) return null;
+    const decodedUrl = decodeURIComponent(url);
+    const marker = `/${bucketName}/`;
+    const idx = decodedUrl.indexOf(marker);
+    if (idx !== -1) {
+      return decodedUrl.substring(idx + marker.length);
+    }
+    return null;
   };
 
   // Helper: Converts & uploads file to Supabase Storage bucket "Gallery Marina Bucket"
@@ -235,13 +258,29 @@ export default function AdminDashboard() {
     if (!window.confirm('هل أنت متأكد من حذف هذه الفئة؟ سيتم إزالة الفئة فقط (تأكد من عدم وجود منتجات تتبعها أولاً)')) return;
     
     try {
+      // 1. Fetch category to get image_url
+      const { data: cat } = await supabase
+        .from('categories')
+        .select('image_url')
+        .eq('id', catId)
+        .single();
+
+      // 2. Delete image from Storage
+      if (cat && cat.image_url) {
+        const path = getStoragePathFromUrl(cat.image_url);
+        if (path) {
+          await supabase.storage.from('Gallery Marina Bucket').remove([path]);
+        }
+      }
+
+      // 3. Delete category from database
       const { error } = await supabase
         .from('categories')
         .delete()
         .eq('id', catId);
       
       if (error) throw error;
-      showStatus('تم حذف الفئة بنجاح!');
+      showStatus('تم حذف الفئة وصورتها بنجاح!');
       fetchData();
     } catch (err: any) {
       showStatus('فشل حذف الفئة. تأكد من إفراغ منتجاتها أولاً.', 'error');
@@ -400,17 +439,44 @@ export default function AdminDashboard() {
     if (!window.confirm('هل أنت متأكد من حذف هذا المنتج بالكامل؟')) return;
 
     try {
-      // Delete images first (due to foreign key constraint)
+      // 1. Fetch product and its additional images to delete files from Storage
+      const { data: prod } = await supabase
+        .from('products')
+        .select('main_image_url')
+        .eq('id', prodId)
+        .single();
+      
+      const { data: addImgs } = await supabase
+        .from('product_images')
+        .select('image_url')
+        .eq('product_id', prodId);
+
+      const pathsToDelete: string[] = [];
+      if (prod && prod.main_image_url) {
+        const path = getStoragePathFromUrl(prod.main_image_url);
+        if (path) pathsToDelete.push(path);
+      }
+      if (addImgs) {
+        addImgs.forEach(img => {
+          const path = getStoragePathFromUrl(img.image_url);
+          if (path) pathsToDelete.push(path);
+        });
+      }
+
+      if (pathsToDelete.length > 0) {
+        await supabase.storage.from('Gallery Marina Bucket').remove(pathsToDelete);
+      }
+
+      // 2. Delete database rows
       await supabase.from('product_images').delete().eq('product_id', prodId);
       
-      // Delete product
       const { error } = await supabase
         .from('products')
         .delete()
         .eq('id', prodId);
       
       if (error) throw error;
-      showStatus('تم حذف المنتج بنجاح!');
+      showStatus('تم حذف المنتج وصوره بنجاح!');
       fetchData();
     } catch (err: any) {
       showStatus('فشل حذف المنتج.', 'error');
@@ -457,6 +523,39 @@ export default function AdminDashboard() {
           <span>{statusMsg.text}</span>
         </div>
       )}
+
+      {/* Statistics Bar */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+        <div className="bg-white border border-outline-variant/30 rounded-xl p-5 shadow-sm flex items-center gap-4 text-right">
+          <div className="w-12 h-12 rounded-lg bg-red-50 flex items-center justify-center text-error">
+            <span className="material-symbols-outlined text-2xl">category</span>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-on-surface">{categories.length}</div>
+            <div className="text-xs text-on-surface-variant font-medium">عدد الفئات الكلي</div>
+          </div>
+        </div>
+        
+        <div className="bg-white border border-outline-variant/30 rounded-xl p-5 shadow-sm flex items-center gap-4 text-right">
+          <div className="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-primary">
+            <span className="material-symbols-outlined text-2xl">shopping_bag</span>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-on-surface">{products.length}</div>
+            <div className="text-xs text-on-surface-variant font-medium">عدد المنتجات الكلي</div>
+          </div>
+        </div>
+        
+        <div className="bg-white border border-outline-variant/30 rounded-xl p-5 shadow-sm flex items-center gap-4 text-right">
+          <div className="w-12 h-12 rounded-lg bg-green-50 flex items-center justify-center text-emerald-600">
+            <span className="material-symbols-outlined text-2xl">image</span>
+          </div>
+          <div>
+            <div className="text-2xl font-bold text-on-surface">{totalImagesCount}</div>
+            <div className="text-xs text-on-surface-variant font-medium">إجمالي الصور المرفوعة</div>
+          </div>
+        </div>
+      </div>
 
       {/* Tabs Selection */}
       <div className="flex border-b border-outline-variant/30 mb-8">
