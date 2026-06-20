@@ -106,3 +106,34 @@ File: Code
 npx skills add supabase/agent-skills
 ```
 bucket name ="Gallery Marina Bucket"
+
+-- --- ROW LEVEL SECURITY (RLS) POLICIES TROUBLESHOOTING ---
+-- If you get a "new row violates row-level security policy" error when inserting/updating:
+
+-- Option A: Disable RLS (Easiest if custom client auth is used)
+-- ALTER TABLE public.categories DISABLE ROW LEVEL SECURITY;
+-- ALTER TABLE public.products DISABLE ROW LEVEL SECURITY;
+-- ALTER TABLE public.product_images DISABLE ROW LEVEL SECURITY;
+-- ALTER TABLE public.admin DISABLE ROW LEVEL SECURITY;
+
+-- Option B: Enable RLS and add public access policies
+-- ALTER TABLE public.categories ENABLE ROW LEVEL SECURITY;
+-- CREATE POLICY "Allow public read access" ON public.categories FOR SELECT USING (true);
+-- CREATE POLICY "Allow public insert" ON public.categories FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "Allow public update" ON public.categories FOR UPDATE USING (true) WITH CHECK (true);
+-- CREATE POLICY "Allow public delete" ON public.categories FOR DELETE USING (true);
+
+-- ALTER TABLE public.products ENABLE ROW LEVEL SECURITY;
+-- CREATE POLICY "Allow public read access" ON public.products FOR SELECT USING (true);
+-- CREATE POLICY "Allow public insert" ON public.products FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "Allow public update" ON public.products FOR UPDATE USING (true) WITH CHECK (true);
+-- CREATE POLICY "Allow public delete" ON public.products FOR DELETE USING (true);
+
+-- ALTER TABLE public.product_images ENABLE ROW LEVEL SECURITY;
+-- CREATE POLICY "Allow public read access" ON public.product_images FOR SELECT USING (true);
+-- CREATE POLICY "Allow public insert" ON public.product_images FOR INSERT WITH CHECK (true);
+-- CREATE POLICY "Allow public update" ON public.product_images FOR UPDATE USING (true) WITH CHECK (true);
+-- CREATE POLICY "Allow public delete" ON public.product_images FOR DELETE USING (true);
+
+-- ALTER TABLE public.admin ENABLE ROW LEVEL SECURITY;
+-- CREATE POLICY "Allow public read access" ON public.admin FOR SELECT USING (true);
